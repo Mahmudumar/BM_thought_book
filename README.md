@@ -1,5 +1,5 @@
 
-# Thought Book ✍️  
+# Thought Book (Source Code) 
 _An offline-first and private space for your thoughts._  
 
 ---
