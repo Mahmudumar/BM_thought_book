@@ -1,0 +1,4 @@
+requests
+markdown
+tkinterweb
+customtkinter

@@ -1,5 +1,6 @@
-__pycache__
+__pycache__/
 *.pyc
 .env
 .vscode/
-
+scripts/__pycache__/
+test.py
