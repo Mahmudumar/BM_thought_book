@@ -1,3 +1,4 @@
+"""for managing app updates and versions"""
 import re
 import logging
 import requests

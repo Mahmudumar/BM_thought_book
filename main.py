@@ -127,7 +127,7 @@ class Book(ctk.CTk):
         self.wm_protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.after(100, lambda: center_window(self, 900, 500))
-        # self.wm_state('zoomed')
+        self.after(200,lambda: self.wm_state('zoomed'))
 
     def unlock_app(self):
         """Initialize all the things that should be initialized"""
@@ -229,7 +229,6 @@ class Book(ctk.CTk):
             self.load_note(0)
 
     def add_note(self, event=None):
-        from scripts.constants import (APP_NAME)
         """Create a new note, save current"""
     
         if self.current_index is not None:
@@ -353,7 +352,7 @@ class Book(ctk.CTk):
         return None
 
     # TODO: .md support
-    
+
     # --------------------
 
 

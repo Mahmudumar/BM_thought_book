@@ -169,33 +169,6 @@ def delete_note(note_id: int) -> None:
         conn.commit()
 
 
-def migrate_from_json(json_path: str = "notes.json") -> int:
-    """One-time migration: import notes from a JSON file.
-
-    The expected JSON format is a list of objects with at least
-    `title` and `content` fields, e.g.:
-        [ {"title": "x", "content": "y"}, ... ]
-
-    Returns the number of notes imported.
-    """
-    import os
-    import json
-    if not os.path.exists(json_path):
-        return 0
-
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    count = 0
-    for item in data:
-        title = item.get("title", "")
-        content = item.get("content", "")
-        add_note(title, content)
-        count += 1
-
-    return count
-
-
 def set_recovery_key(code: str):
     import hashlib
     from .constants import (RECOVERY_FILE)
