@@ -33,7 +33,7 @@ Most note apps are slow, online-dependent, insecure, and leave your notes scatte
 **Run from source**  
 1. Clone the repo  
    ```bash
-   git clone https://github.com/Tech-Naija-Rise/thought_book_.git
+   git clone https://github.com/Mahmudumar/BM_thought_book.git
    cd thought_book
     ```
 
@@ -49,19 +49,19 @@ Most note apps are slow, online-dependent, insecure, and leave your notes scatte
 ## 🔒 Privacy First
 
 * All notes are stored locally and encrypted.
-* You control backups. See the [how-to guide](./docs/how_to.md) for secure backup instructions.
+
 
 ---
 
 ## 📚 Documentation
 
-Full project documentation is available [here](./docs/README.md).
+Full project documentation will soon be available
 
 ---
 
 ## ⚡ Contribution
 
-We welcome feedback and contributions. Open an issue, submit a PR, or share suggestions to help us improve.
+We welcome feedback and contributions. Open an issue, submit a PR, or share suggestions to help us improve. See [Contribution](CONTRIBUTING)
 
 ---
 
