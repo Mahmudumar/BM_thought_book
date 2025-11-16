@@ -163,7 +163,7 @@ SectionEnd
 """
 # Build executable
 
-output_dir = Path("C:\\Users\\USER\\Documents\\PROGRAMMING\\FINISHED APPS")
+output_dir = Path("..\\FINISHED APPS")
 output_dir.mkdir(exist_ok=True)
 
 

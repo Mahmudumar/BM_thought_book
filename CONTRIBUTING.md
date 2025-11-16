@@ -12,7 +12,7 @@ Thanks for your interest in contributing! We welcome code changes, bug reports, 
 
 ## What we accept
 - Bug fixes and stability improvements
-- Small features that improve personal or common workflows
+- **Small features that improve personal or common workflows**
 - Documentation or copy improvements (README, docs)
 - Tests and small refactors that make the code easier to maintain
 
