@@ -23,23 +23,6 @@ import customtkinter as ctk
 from .constants import (APP_ICON)
 import sqlite3
 from typing import (List, Dict, Optional)
-# import winreg
-# import tkinter.messagebox as tkmsg
-
-
-# def set_user_env_var(name, value):
-#     from .constants import (logging)
-
-#     reg_path = r"Environment"
-#     reg_key = winreg.OpenKey(
-#         winreg.HKEY_CURRENT_USER,
-#         reg_path,
-#         0,
-#         winreg.KEY_SET_VALUE
-#     )
-#     winreg.SetValueEx(reg_key, name, 0, winreg.REG_SZ, value)
-#     winreg.CloseKey(reg_key)
-#     logging.info(f"[+] User variable '{name}' set to '{value}'")
 
 
 def get_connection():
