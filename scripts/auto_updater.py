@@ -115,7 +115,6 @@ class AutoUpdater:
 
             # Run installer
             subprocess.Popen([filename, "/S"], shell=True)
-            # self.parent.destroy()  # Close app to allow installer
             if show_progress:
                 tkmsg.showinfo(("Successfully installed "
                                 f"{APP_SHORT_NAME} Updates"),

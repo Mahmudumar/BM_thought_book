@@ -107,9 +107,7 @@ We (TNR) maintain this project and appreciate contributions. By submitting a pul
 
 To ensure contributors and TNR receive credit:
 - Your GitHub profile will automatically be credited on the Pull Request and in commit history.
-- We may add notable contributors to a `AUTHORS.md` or release notes. If you'd like a specific credit line, mention it in the PR description (how you'd like to be named).
-
-If you want your changes to explicitly mention `TNR` as the project owner in a CHANGELOG or release note, maintainers will add that during release packaging. Feel free to add "Co-authored-by" lines to commits when appropriate.
+- We may add notable contributors to a `AUTHORS.md` or release notes.
 
 ## Code of Conduct
 Be respectful, kind, and inclusive. We will not tolerate harassment or abusive behavior. If you experience or witness misconduct, contact the maintainers via an issue or email listed in the repo.

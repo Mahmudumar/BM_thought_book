@@ -24,24 +24,20 @@ __all__ = [
 
 # --- App Info ---
 APP_NAME = "Thought Book"
-# for now, manually change
-# the version to match the
-# update.json and the deploy.
 APP_VERSION = "1.0.54"
 APP_SHORT_NAME = "BMTB"
 
 
 # --- Helper Functions ---
-# Always have this in other BM apps
 def resource_path(relative_path="") -> Path:
     """Return absolute path to resource (works for dev & PyInstaller)."""
     try:
-        # will run when Deployed
+        # will run when compiled into .exe by pyinstaller
         base_path= Path("_internal") / "data" / relative_path
         if not base_path.exists():
             raise TypeError
     except TypeError:
-        # Means it is run in debug mode
+        # will run while you are testing
         base_path =  Path(__file__).resolve().parent.parent
 
     return base_path
@@ -70,7 +66,6 @@ if not HIDDEN_FOLDER.exists():
 
 
 # --- Files ---
-# Hidden files
 ID_FILE = HIDDEN_FOLDER / "config.json"
 EMAIL_ID_FILE = HIDDEN_FOLDER / "email_config.json"
 
@@ -151,9 +146,5 @@ TNR_BMTB_SERVER = "https://feedback-server-tnr.onrender.com"
 
 
 if __name__ == "__main__":
-    # print(f"Main folder: {MAIN_FOLDER}")
-    # print(f"Data folder: {DATA_FOLDER}")
-    # print(f"Device ID: {get_device_id(ID_FILE)}")
-    # print(f"App version: {APP_VERSION}")
-    # print(f"App ICON: {APP_ICON}")
+    
     pass

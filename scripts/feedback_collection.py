@@ -32,18 +32,13 @@ import tkinter.messagebox as tkmsg
 
 class FeedbackAPI:
     def __init__(self, parent=None) -> None:
-        """Collect feedback from offline and when the user
-        gets online, then just send it to the developer through
-        email.
-
-        But inform the user that you will be checking when they
-        get online so that the feedback can be sent.
+        """
+        Automatically check for internet in the background
+        and send feedback if there is any saved
+        otherwise, just end thread
         """
         self.parent = parent
 
-        # Automatically check for internet in the background
-        # and send feedback if there is any saved
-        # otherwise, just end thread
         threading.Thread(name="Background internet check",
                          target=self.check_periodically,
                          daemon=True).start()
@@ -158,13 +153,13 @@ class FeedbackAPI:
         return self.data, True
 
     def get_app_log(self):
-        """Return the last 100 lines of the app log file."""
+        """Return the last 10 lines of the app log file."""
         log_path = pathlib.Path(LOGS_FILE)
         if log_path.exists():
             try:
                 with open(log_path, "r") as lf:
                     lines = lf.readlines()
-                    return "".join(lines[-10:])  # Return last 5 lines
+                    return "".join(lines[-10:])
             except Exception as e:
                 logging.error(f"Error reading log file: {e}")
                 return "Could not read log file."
@@ -311,11 +306,13 @@ class FeedbackAPI:
             json.dump([], w)
 
     def check_periodically(self):
-        # Wake up the server if it is sleeping
+        """This only runs when the feedback toplevel is open
+        Once it is closed, this function stops"""
         from .utils import (has_internet)
         import requests
         try:
             requests.get(BMTB_FEEDBACK_SERVER)
+            # Wake up the server if it is sleeping
         except Exception as e:
             logging.error(f"Server problems again. {e}", stack_info=True)
         logging.info("Starting internet check background process")

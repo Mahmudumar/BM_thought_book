@@ -19,7 +19,7 @@ class Book(ctk.CTk):
         # Ensure window shows first
         self.start_ui()
 
-        # This is how we will do every startup block
+        # This is how to require a password if setting is on
         self.after(50, lambda: self.init_settings())
 
     # --- Managers and settings ---
@@ -152,7 +152,6 @@ class Book(ctk.CTk):
 
         # Settings + Password
         self.password = None
-        # self.password_file = PASS_FILE
         self.password_manager = PasswordManager(self)
  
         # App Update Management
@@ -190,9 +189,6 @@ class Book(ctk.CTk):
         """Handle app close event, process POAs and destroy window."""
         try:
             pass
-            # Pause on BMA integration for now.
-            # poas = self.get_poas(current_content)
-            # self.bma.make_activities(poas)
         except Exception as e:
             logging.error(f"Error during app close: {e}")
         finally:
@@ -357,6 +353,7 @@ class Book(ctk.CTk):
         return None
 
     # TODO: .md support
+    
     # --------------------
 
 

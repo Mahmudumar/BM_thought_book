@@ -261,7 +261,7 @@ def center_window(w, wdth, hght, offsetx=0, offsety=0, readjust=False):
         height = w.winfo_reqheight()
 
     # Calculate center coordinates
-    
+    # TODO
     x = ((w.winfo_screenwidth() - width) // 2)
     y = ((w.winfo_screenheight() - height) // 2)
 
@@ -289,8 +289,7 @@ class Askstring(Toplevel):
         """Universal CTk askstring dialog. Returns str or None."""
 
         self.wm_title(title)
-        # self.wm_geometry(f"{width}x{height}")
-        # Doesn't have chance to set at
+        
         self.wm_iconbitmap(APP_ICON)
         self.wm_transient(self.parent)
 
@@ -383,38 +382,4 @@ def connected_to_server(url):
 
 
 if __name__ == "__main__":
-    # print(all_notes())
     pass
-
-
-# class TrainingUI(ctk.CTk):
-#     def __init__(self):
-#         super().__init__()
-#         self.title("GPT Training Progress")
-#         self.geometry("360x120")
-
-#         # Label for status
-#         self.label = ctk.CTkLabel(self, text="Training not started…")
-#         self.label.pack(fill="x", padx=10, pady=(10, 4))
-
-#         # Progress bar
-#         self.bar = ctk.CTkProgressBar(self)
-#         self.bar.pack(fill="x", padx=10, pady=(0, 4))
-#         self.bar.set(0.0)
-
-#         # Percent text
-#         self.percent = ctk.CTkLabel(self, text="0%")
-#         self.percent.pack(fill="x", padx=10, pady=(0, 10))
-
-#     def update_progress(self, current: int | str, end: int | str, message="Training..."):
-#         """
-#         Update the UI with training progress.
-#         Pass current step, total steps (end), and an optional message.
-#         """
-
-#         # clamp between 0 and 1
-#         progress = max(0.0, min(1.0, int(current) / int(end)))
-#         self.bar.set(progress)
-#         self.label.configure(text=message)
-#         self.percent.configure(text=f"{int(progress * 100)}%")
-#         self.update_idletasks()  # force UI refresh

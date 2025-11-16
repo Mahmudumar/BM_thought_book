@@ -139,9 +139,7 @@ class SettingsWindow(Toplevel):
                   **self.styles["button"]).pack(side="right")
 
         self.after(2000, self.wake_server_up)
-        # If the first one fails,
-        self.after(1000, lambda: self.wm_iconbitmap(APP_ICON))
-
+        
     # ----- window funcs -----
     def on_close(self, save=True):
         if save:
