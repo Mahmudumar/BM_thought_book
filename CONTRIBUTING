@@ -1,0 +1,128 @@
+(The file `c:\Users\USER\Documents\PROGRAMMING\thought_book_2\CONTRIBUTING` exists, but is empty)
+# Contributing to Thought Book
+
+Thanks for your interest in contributing! We welcome code changes, bug reports, feature requests, documentation updates, translations, and tests. This document explains how to contribute in a way that helps reviewers merge your changes quickly and gives credit to the project owners (TNR).
+
+## Quick start (TL;DR)
+- Fork the repo
+- Create a branch: `git checkout -b feat/short-descriptive-name`
+- Make changes, add tests, and run the app locally
+- Commit with clear messages and push to your fork
+- Open a Pull Request against `main` with a description and screenshots if relevant
+
+## What we accept
+- Bug fixes and stability improvements
+- Small features that improve personal or common workflows
+- Documentation or copy improvements (README, docs)
+- Tests and small refactors that make the code easier to maintain
+
+If you'd like to work on a larger feature, open an issue first to discuss the idea and design.
+
+## Reporting issues
+1. Search existing issues to avoid duplicates.
+2. Open a new issue with a clear title and steps to reproduce.
+3. Include:
+	- Environment (OS, Python version)
+	- Steps to reproduce
+	- Expected vs actual behavior
+	- Minimal logs or screenshots
+
+## Code contributions (pull requests)
+1. Fork the repository and clone your fork.
+2. Create a feature branch with a descriptive name: `feat/auto-backup`, `fix/db-error`.
+3. Keep changes small and focused — one logical change per PR.
+4. Write a clear PR description explaining the problem, the change, and any migration steps.
+5. If the change affects behavior, add or update tests where feasible.
+6. Use `Co-authored-by: Name <email>` in commits when collaborating on the same change.
+
+Branching and commit guidelines
+- Base work on the `main` branch.
+- Use present-tense imperative commit messages, e.g. `Add autosave debounce`.
+
+## Development setup (how to run the app locally)
+The project is Python-based and uses plain scripts under the `scripts/` folder.
+
+1. Make sure you have Python 3.10+ installed.
+2. Create a virtual environment and activate it:
+
+	Windows (cmd.exe)
+	```cmd
+	python -m venv .venv
+	.venv\\Scripts\\activate
+	```
+
+3. Install dependencies (if a requirements file exists) or the minimum listed below. If you don't have a `requirements.txt`, install the libraries the app imports (examples below). Run from repo root:
+
+	```cmd
+	pip install -r requirements.txt
+	```
+
+	If `requirements.txt` is not present, the app commonly uses:
+
+	```cmd
+	pip install customtkinter requests
+	```
+
+4. Quick run (from repo root):
+
+	```cmd
+	python deploy.py
+	```
+
+	or (for direct run while developing):
+
+	```cmd
+	python main.py
+	```
+
+Notes
+- `deploy.py` is the project's helper to prepare the app; running it should set up files and shortcuts for a local development experience.
+- If you see errors about missing packages, install them into your venv and re-run.
+
+## Project layout (high level)
+- `main.py` — application entry & UI
+- `deploy.py` — deployment/setup helper
+- `scripts/` — application modules (utils, password manager, settings, etc.)
+- `imgs/` — images and assets
+
+Knowing where to make a change
+- UI or behavior changes — `main.py` and `scripts/`
+- Persistence and DB helpers — `scripts/utils.py`
+- Settings and config — `scripts/settings.py`
+
+## Tests
+There are no required unit tests yet, but we appreciate tests for logic changes. If you add tests:
+- Keep them small and fast.
+- Prefer pure Python tests for non-GUI logic (utils, DB helpers).
+
+## Style and linting
+- Follow readable Python style (PEP8). We recommend using `black` and `flake8` locally but do not enforce them in CI yet.
+
+## Review process
+- PRs will be reviewed by a project maintainer.
+- Expect feedback and be prepared to iterate; small changes speed up review.
+
+## Attribution and credits (TNR)
+We (TNR) maintain this project and appreciate contributions. By submitting a pull request you agree to license your contribution under the project's license.
+
+To ensure contributors and TNR receive credit:
+- Your GitHub profile will automatically be credited on the Pull Request and in commit history.
+- We may add notable contributors to a `AUTHORS.md` or release notes. If you'd like a specific credit line, mention it in the PR description (how you'd like to be named).
+
+If you want your changes to explicitly mention `TNR` as the project owner in a CHANGELOG or release note, maintainers will add that during release packaging. Feel free to add "Co-authored-by" lines to commits when appropriate.
+
+## Code of Conduct
+Be respectful, kind, and inclusive. We will not tolerate harassment or abusive behavior. If you experience or witness misconduct, contact the maintainers via an issue or email listed in the repo.
+
+## Small contributions that help a lot
+- Improve wording in README or docs
+- Add a short HOWTO or troubleshooting note under `docs/`
+- Add unit tests for `scripts/utils.py` functions
+- Submit bug reports with detailed reproduction steps
+
+## Need help?
+Open an issue and tag it `help-wanted` or `good-first-issue` if you're new — we can suggest starter tasks.
+
+---
+Thank you for helping make Thought Book better — every improvement helps users build a healthier thinking habit. — TNR
+
